@@ -1,14 +1,77 @@
 <?php
+    session_start();
     include('dbconnection.php');
+ 
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'vendor/autoload.php';
+
+    function sendemail_verify($name, $email, $verifyToken)
+    {
+        $mail = new PHPMailer(true);
+
+        $mail->SMTPDebug = 2;                      
+        $mail->isSMTP();                           
+        $mail->Host = 'smtp.gmail.com';                   
+        $mail->SMTPAuth = true;                               
+        $mail->Username = 'alison.kipyegon@strathmore.edu';   
+        $mail->Password = 'dbvl wpif qqgm qyeb';                               
+        $mail->SMTPSecure = "tls";            
+        $mail->Port = 587;  
+        
+        $mail->setFrom('alison.kipyegon@strathmore.edu', 'Restaurant Booking System');
+        $mail->addAddress($email);
+
+        $mail->isHTML(true);                                  
+        $mail->Subject = 'Verify Your Email';
+
+        $email_template = "
+            To complete the registration process, <a href= 'http://localhost/project/verifyEmail.php?token=$verifyToken'>click here</a>
+        ";
+
+        $mail->Body = $email_template;
+        $mail->send();
+        // echo 'Message sent';
+    }
+
     if(isset($_POST['submit'])){
          $name = $_POST['custName'];
          $email = $_POST['email'];
          $phoneNo = $_POST['phoneNo'];
          $pass = $_POST['password'];
          $confPass = $_POST['confpassword'];
+         $verifyToken = md5(rand());
 
-        //  to upload to the database
-        $query = mysqli_query($con, "Insert into customers(cust_name, email_address, phone_no, password, conf_password) values('$name', '$email', '$phoneNo', '$pass', '$confPass')" );
+        //  check if email address exists
+        $check_email_query = "select email_address from customers where email_address='$email' limit 1";
+        $check_email_query_run = mysqli_query($con, $check_email_query );
+
+        if(mysqli_num_rows( $check_email_query_run))
+        {
+            $_SESSION['status'] = "Email ID exists";
+            header("Location: customerSignUp.php");
+        }
+        else
+        {
+             //  to upload to the database
+            $query = mysqli_query($con, "Insert into customers(cust_name, email_address, phone_no, password, conf_password) values('$name', '$email', '$phoneNo', '$pass', '$confPass')" );
+
+            if($query)
+            {
+                sendemail_verify("$name", "$email", "$verifyToken");
+                $_SESSION['status'] = "Please verify Email address to complete registration";
+                header("Location: customerSignUp.php");
+            }
+            else
+            {
+                $_SESSION['status'] = "Failed to register the restaurant";
+                header("Location: restaurantSignUp.php");
+            }
+        }
+
+       
 
 
 
