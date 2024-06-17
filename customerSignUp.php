@@ -28,7 +28,7 @@
         $mail->Subject = 'Verify Your Email';
 
         $email_template = "
-            To complete the registration process, <a href= 'http://localhost/project/verifyEmail.php?token=$verifyToken'>click here</a>
+            To complete the registration process, <a href= 'http://localhost/project/index.html?token=$verifyToken'>click here</a>
         ";
 
         $mail->Body = $email_template;
@@ -56,7 +56,7 @@
         else
         {
              //  to upload to the database
-            $query = mysqli_query($con, "Insert into customers(cust_name, email_address, phone_no, password, conf_password) values('$name', '$email', '$phoneNo', '$pass', '$confPass')" );
+            $query = mysqli_query($con, "Insert into customers(cust_name, email_address, phone_no, password, conf_password, verify_token) values('$name', '$email', '$phoneNo', '$pass', '$confPass', '$verifyToken')" );
 
             if($query)
             {

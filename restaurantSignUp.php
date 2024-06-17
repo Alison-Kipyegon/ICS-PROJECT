@@ -28,7 +28,7 @@
         $mail->Subject = 'Verify Your Email';
 
         $email_template = "
-            To complete the registration process, <a href= 'http://localhost/project/verifyEmail.php?token=$verifyToken'>click here</a>
+            To complete the registration process, <a href= 'http://localhost/project/index.html?token=$verifyToken'>click here</a>
         ";
 
         $mail->Body = $email_template;
