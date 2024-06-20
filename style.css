@@ -1,4 +1,9 @@
 /* General CSS for the entire document */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -355,6 +360,16 @@ h6 {
     padding: 8px 20px;
     letter-spacing: 1px;
   }
+}
+
+/* Sign Up-Sign In CSS */
+
+.sign-up{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #ffa012;
 }
 
 /* Book a Table Page */
