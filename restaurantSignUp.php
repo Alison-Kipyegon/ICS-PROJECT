@@ -17,7 +17,7 @@
         $mail->Host       = 'smtp.gmail.com';                   
         $mail->SMTPAuth   = true;                               
         $mail->Username   = 'alison.kipyegon@strathmore.edu';   
-        $mail->Password   = 'dbvl wpif qqgm qyeb';                               
+        $mail->Password   = 'vaob pjnl vsbt buxa';                               
         $mail->SMTPSecure = "tls";            
         $mail->Port       = 587;  
         
@@ -28,7 +28,7 @@
         $mail->Subject = 'Verify Your Email';
 
         $email_template = "
-            To complete the registration process, <a href= 'http://localhost/project/index.html?token=$verifyToken'>click here</a>
+            To complete the registration process, <a href= 'http://localhost/project/customerReviews.html?token=$verifyToken'>click here</a>
         ";
 
         $mail->Body = $email_template;
@@ -91,12 +91,12 @@
 <!-- Boxicon CSS -->
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <!-- Sign Up CSS File -->
-<link rel="stylesheet" href="signup.css">
+<link rel="stylesheet" href="css/signup.css">
     <title>Restaurant Sign Up</title>
 </head>
 <body>
     <div class="sign-up">
-        <div class="wrapper">
+        <div class="wrapper"> 
             <div class="alert">
                     <?php
                         if(isset($_SESSION['status']))
@@ -107,7 +107,7 @@
                     ?>
             </div>
                      
-             <h1>Sign Up</h1>
+             <h1>Restaurant Sign Up</h1>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="input-box">
                         <input type="text" name="restaurantName" placeholder="Restaurant Name" required>
@@ -144,4 +144,10 @@
              
 
 </body>
+    <!-- Bootstrap JS files -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!-- Main JS File -->
+    <script src="main.js"></script>
+
 </html>

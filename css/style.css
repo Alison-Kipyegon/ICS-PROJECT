@@ -362,7 +362,7 @@ h6 {
   }
 }
 
-/* Sign Up-Sign In CSS */
+/* Sign Up page CSS */
 
 .sign-up{
   display: flex;
@@ -370,6 +370,19 @@ h6 {
   align-items: center;
   min-height: 100vh;
   background: #ffa012;
+  color: black;  
+}
+
+.wrapper{
+  width: 420px;
+  background:  #fff;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+  color: black;
+  border-radius: 10px;
+  padding: 30px 40px;
+  transition: all 0.6s ease-in-out;
 }
 
 /* Book a Table Page */
@@ -462,7 +475,34 @@ h6 {
   background: #ffa012;
 }
 
+/* Testimonials section */
 
+.testimonials{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.testimonials-heading{
+  letter-spacing: 1px;
+  margin: 30px 0px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials-heading h1{
+  font-size: 2.2rem;
+  font-weight: 500;
+  background-color:#ffc56e;
+  color: #444444;
+  padding: 10px 20px;
+
+}
 /* Footer style */
 
 #footer {

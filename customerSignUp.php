@@ -17,7 +17,7 @@
         $mail->Host = 'smtp.gmail.com';                   
         $mail->SMTPAuth = true;                               
         $mail->Username = 'alison.kipyegon@strathmore.edu';   
-        $mail->Password = 'dbvl wpif qqgm qyeb';                               
+        $mail->Password = 'vaob pjnl vsbt buxa';                               
         $mail->SMTPSecure = "tls";            
         $mail->Port = 587;  
         
@@ -93,7 +93,7 @@
 <!-- Boxicon CSS -->
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <!-- Sign Up CSS File -->
-<link rel="stylesheet" href="signup.css">
+<link rel="stylesheet" href="css/signup.css">
     <title>Customer Sign Up</title>
 </head>
 <body>

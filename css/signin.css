@@ -1,19 +1,16 @@
 *{
-    margin: 0;
+    margin:0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+.sign-in{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('img/Restaurant-aesthetic.jpeg');
-    background-size: cover;
-    background-position: center;
+    background: url('../img/pretty-restaurant.jpeg');
 }
-
 
 .wrapper{
     width: 420px;
@@ -30,7 +27,6 @@ body{
     font-family: "Satisfy", sans-serif;
     font-size: 36px;
     text-align:center;
-
 }
 
 .wrapper .input-box{
