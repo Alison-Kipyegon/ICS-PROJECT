@@ -70,7 +70,7 @@ h6 {
   padding: 10px 0;
   background: rgba(26, 24, 22, 0.85);
 }
-
+ 
 #header.header-transparent {
   background: transparent;
 }
@@ -212,6 +212,76 @@ h6 {
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
   margin: 15px;
+}
+
+/* Search Box CSS */
+
+.search-box{
+  width: 600px;
+  background: #fff;
+  margin: 20px auto 0;
+  border-radius: 15px;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+input{
+  flex: 1;
+  height: 40px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  color: #ffa012;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+button{
+  background: transparent;
+  border: 0;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+button i{
+  font-size: 18px;
+  color: #ffa012;
+}
+
+button .fa-solid{
+  width: 10px;
+  color: #444444;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+::placeholder{
+  color: #ffa012;
+}
+
+.result-box ul{
+  border-top: 1px solid  #ffa012;
+  padding: 15px 10px;
+}
+
+.result-box ul li{
+  list-style: none;
+  border-radius: 3px;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+
+.result-box ul li:hover{
+  background-color: #ffa012;
+
 }
 
 /* Home Page CSS */

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Booking</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <header>
+        <h1>Book a Table</h1>
+    </header>
+    <main>
+        <form id="bookingForm">
+            <input type="hidden" id="menuId" name="menuId" value="">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            <label for="bookingDate">Booking Date:</label>
+            <input type="date" id="bookingDate" name="bookingDate" required>
+            <label for="bookingTime">Booking Time:</label>
+            <input type="time" id="bookingTime" name="bookingTime" required>
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" required>
+            <label for="requests">Special Requests:</label>
+            <textarea id="requests" name="requests"></textarea>
+            <button type="button" onclick="submitBooking()">Submit</button>
+        </form>
+    </main>
+    <script src="booking.js"></script>
+        
+</body>
+</html>

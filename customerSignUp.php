@@ -43,7 +43,7 @@
          $pass = $_POST['password'];
          $confPass = $_POST['confpassword'];
          $verifyToken = md5(rand());
-
+ 
         //  check if email address exists
         $check_email_query = "select email_address from customers where email_address='$email' limit 1";
         $check_email_query_run = mysqli_query($con, $check_email_query );

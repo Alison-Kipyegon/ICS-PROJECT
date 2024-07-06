@@ -7,8 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- Main CSS File -->
     <link rel="stylesheet" href="css/style.css">
+     <!-- Font Awesome -->
+     <script src="https://kit.fontawesome.com/71b02a9e34.js" crossorigin="anonymous"></script></head>
     <title>Landing page</title>
 </head>
 <body>
@@ -23,11 +27,21 @@
                   <a href="index.html">Restaurant Booking System</a>
                 </h1>
             </div>
-            
+
+            <div class="search-box">
+              <div class="row">
+                  <input type="text" id="input-box" placeholder="Search For a Restaurant" autocomplete="off">
+                  <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              </div>
+                <div class="result-box">
+                  
+                </div>
+            </div>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
+             
                 <ul>
-                  <a href="bookTable.html" class="book-a-table-btn scrollto">Book a table</a>
+                  <a href="bookTable.php" class="book-a-table-btn scrollto">Book a table</a>
                   <!-- <li><a class="nav-link scrollto active" href="signIn.html">Sign In</a></li> -->
                   <li><a class="nav-link scrollto active" href="signUp.html">Sign Up</a></li>
                 </ul>
@@ -53,7 +67,7 @@
                     <h2 class="animate__animated animate__fadeInDown"><span>Restaurant</span> Booking</span> System</h2>
                     <p class="animate__animated animate__fadeInUp">Search for any restaurant that best fits your needs. Make reservations for a table</p>
                     <div>
-                        <a href="bookTable.html" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                        <a href="bookTable.php" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
                     </div>
                   </div>
                 </div>
@@ -65,7 +79,7 @@
                     <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
                     <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
                     <div>
-                        <a href="bookTable.html" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                        <a href="bookTable.php" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
                     </div>
                   </div>
                 </div>
@@ -77,7 +91,7 @@
                     <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
                     <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
                     <div>
-                        <a href="bookTable.html" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                        <a href="bookTable.php" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
                     </div>
                   </div>
                 </div>
@@ -101,13 +115,21 @@
           <div class="container">
             <h3>Restaurant Booking System</h3>
             <p>For more information, find us on our social media pages below</p>
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          </div>
           </div>
         </footer>
 
+        <!-- Swiper Js -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <!-- Bootstrap JS files -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         <!-- Main JS File -->
-        <script src="main.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/searchbar.js"></script>
       </body>
 </html> 

@@ -1,3 +1,21 @@
+<?php
+
+if(isset($_POST['submit'])){
+  $restName = $_POST['rest_name'];
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $date = $_POST['date'];
+  $time = $_POST['time'];
+  $people = $_POST['people'];
+
+  $query = mysqli_query($con, "Insert into restaurant_bookings(restaurant_name, cust_name, cust_email, cust_phone, date, time, no_of_people) values('$restName', '$name', '$email', '$phone', '$date', '$time', '$people')" );
+}
+  
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +28,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     <title>Book a Table</title>
-</head>
+</head> 
 <body>
     <section id="book-a-table" class="book-a-table">
         <div class="container">
@@ -32,7 +50,8 @@
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">                <div class="validate"></div>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">                
+                <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
                 <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
@@ -58,7 +77,9 @@
               <div class="error-message"></div>
               <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
             </div>
-            <div class="text-center"><button type="submit">Book Table</button></div>
+            <div class="text-center">
+              <button name="submit" type="submit">Book Table</button>
+            </div>
           </form>
   
         </div>
