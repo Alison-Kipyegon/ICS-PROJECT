@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Management</title>
+</head>
+<body>
+    <h1>Restaurant Management</h1>
+
+    <h2>Add Restaurant</h2>
+    <form id="addRestaurantForm">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="location" placeholder="Location" required>
+        <input type="text" name="cuisine" placeholder="Cuisine" required>
+        <input type="number" step="0.1" name="rating" placeholder="Rating" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>Search Restaurants</h2>
+    <input type="text" id="searchQuery" placeholder="Search...">
+    <button onclick="searchRestaurants()">Search</button>
+
+    <h2>Results</h2>
+    <ul id="results"></ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#addRestaurantForm').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: 'add_restaurant.php',
+                data: $(this).serialize(),
+                success: function (response) {
+                    alert(response);
+                    $('#addRestaurantForm')[0].reset();
+                }
+            });
+        });
+
+        function searchRestaurants() {
+            var query = $('#searchQuery').val();
+            $.ajax({
+                type: 'GET',
+                url: 'search_restaurants.php',
+                data: { query: query },
+                success: function (response) {
+                    var restaurants = JSON.parse(response);
+                    var results = $('#results');
+                    results.empty();
+                    restaurants.forEach(function (restaurant) {
+                        results.append('<li>' + restaurant.name + ' - ' + restaurant.location + ' - ' + restaurant.cuisine + ' - ' + restaurant.rating + '</li>');
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
