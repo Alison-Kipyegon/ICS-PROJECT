@@ -1,4 +1,5 @@
-<?php
+<?php 
+include('dbconnection.php');
 
 if(isset($_POST['submit'])){
   $restName = $_POST['rest_name'];
@@ -6,7 +7,7 @@ if(isset($_POST['submit'])){
   $email = $_POST['email'];
   $phone = $_POST['phone'];
   $date = $_POST['date'];
-  $time = $_POST['time'];
+  $time = $_POST['time']; 
   $people = $_POST['people'];
 
   $query = mysqli_query($con, "Insert into restaurant_bookings(restaurant_name, cust_name, cust_email, cust_phone, date, time, no_of_people) values('$restName', '$name', '$email', '$phone', '$date', '$time', '$people')" );
@@ -27,9 +28,23 @@ if(isset($_POST['submit'])){
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/71b02a9e34.js" crossorigin="anonymous"></script>
     <title>Book a Table</title>
 </head> 
 <body>
+  <nav>
+      <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <div class="logo me-auto">
+                <h1>
+                  <a href="index.html">Back</a>
+                </h1>
+            </div>
+        </header>
+  </nav>
+
     <section id="book-a-table" class="book-a-table">
         <div class="container">
   
@@ -43,16 +58,14 @@ if(isset($_POST['submit'])){
               <div class="col-lg-4 col-md-6 form-group">
                 <div class="form-group mt-3">
                 <input type="text" name="rest_name" class="form-control" id="rest_name" placeholder="Restaurant Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                
-                    <div class="validate"></div>
+                  <div class="validate"></div><br>
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                
                 <div class="validate"></div>
               </div>
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
                 <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">                
                 <div class="validate"></div>
-              </div>
+              </div> 
               <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
                 <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                 <div class="validate"></div>
@@ -85,17 +98,18 @@ if(isset($_POST['submit'])){
         </div>
       </section>
 
-    <footer id="footer">
-        <div class="container">
+      <footer id="footer">
+          <div class="container">
             <h3>Restaurant Booking System</h3>
-            <p>For more information, kindly find us on our social media pages listed below</p>
-                <div class="social-links">
-                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                </div>
-        </div>
-    </footer>
+            <p>For more information, find us on our social media pages below</p>
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          </div>
+        </footer>
+        
         <!-- Bootstrap JS files -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
