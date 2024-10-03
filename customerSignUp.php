@@ -107,15 +107,15 @@
                         <div class="input-box">
                             <input type="email" name="email" placeholder="Email" required>
                         </div>
-                        <div class="input-box">
+                        <!-- <div class="input-box">
                             <input type="number" name="phoneNo" placeholder="Phone No." required>
-                        </div>
+                        </div> -->
                         <div class="input-box">
                              <input type="password" name="password" placeholder="Enter Password" required>
                         </div>
-                       <div class="input-box">
+                       <!-- <div class="input-box">
                             <input type="password" name="confpassword" placeholder="Confirm Password" required>
-                       </div>
+                       </div> -->
                         
                        <button type="submit" class="btn">Register</button>
                     </form>
